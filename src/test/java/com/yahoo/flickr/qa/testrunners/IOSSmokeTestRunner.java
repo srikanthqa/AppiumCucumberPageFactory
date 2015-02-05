@@ -1,8 +1,9 @@
 package com.yahoo.flickr.qa.testrunners;
 
-import com.yahoo.flickr.qa.utils.AbstractTestRunner;
+import com.yahoo.flickr.qa.utils.AbstractDriver;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+import io.appium.java_client.AppiumDriver;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;

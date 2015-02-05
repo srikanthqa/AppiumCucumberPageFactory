@@ -11,6 +11,5 @@ public class SettingsPage extends AbstractPage{
 
     public SettingsPage(AppiumDriver driver) {
         super(driver);
-        initPage();
     }
 }

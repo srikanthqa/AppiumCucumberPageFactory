@@ -15,7 +15,6 @@ public class AutoSyncPage extends AbstractPage{
 
     public AutoSyncPage(AppiumDriver driver) {
         super(driver);
-        initPage();
     }
 
     @iOSFindBy(name = "Auto Sync")

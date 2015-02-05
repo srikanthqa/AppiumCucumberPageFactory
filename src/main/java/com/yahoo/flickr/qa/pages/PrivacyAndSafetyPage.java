@@ -11,6 +11,5 @@ public class PrivacyAndSafetyPage extends AbstractPage{
 
     public PrivacyAndSafetyPage(AppiumDriver driver) {
         super(driver);
-        initPage();
     }
 }

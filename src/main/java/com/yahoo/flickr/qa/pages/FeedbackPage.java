@@ -11,6 +11,5 @@ public class FeedbackPage extends AbstractPage{
 
     public FeedbackPage(AppiumDriver driver) {
         super(driver);
-        initPage();
     }
 }

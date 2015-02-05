@@ -11,6 +11,5 @@ public class AboutPage extends AbstractPage{
 
     public AboutPage(AppiumDriver driver) {
         super(driver);
-        initPage();
     }
 }

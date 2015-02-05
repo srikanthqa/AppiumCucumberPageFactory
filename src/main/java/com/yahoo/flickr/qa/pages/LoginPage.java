@@ -12,7 +12,6 @@ public class LoginPage extends AbstractPage{
 
     public LoginPage(AppiumDriver driver) {
         super(driver);
-        initPage();
     }
 
     @iOSFindBy(uiAutomator = ".scrollViews()[0].webViews()[0].textFields().firstWithPredicate(\"value like 'Username or number'\")")
@@ -34,11 +33,13 @@ public class LoginPage extends AbstractPage{
         editPassword.sendKeys(password);
     }
 
-    public OnBoardingAutoSyncPage clickSignInBtn(){
+    public AutoSyncBannerPage clickSignInBtn(){
         btnSignIn.click();
-        return new OnBoardingAutoSyncPage(driver);
+        return new AutoSyncBannerPage(driver);
     }
 
-
+    public boolean verifyPage(){
+        return editUserName.isDisplayed();
+    }
 
 }

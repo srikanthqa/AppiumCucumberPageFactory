@@ -12,7 +12,6 @@ public class WelcomePage extends AbstractPage{
 
     public WelcomePage(AppiumDriver driver) {
         super(driver);
-        initPage();
     }
 
     @iOSFindBy(name = "Get Started")

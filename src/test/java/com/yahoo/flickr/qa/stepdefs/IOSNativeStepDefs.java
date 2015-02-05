@@ -1,35 +1,42 @@
 package com.yahoo.flickr.qa.stepdefs;
 
 import com.yahoo.flickr.qa.pages.LoginPage;
-import com.yahoo.flickr.qa.pages.OnBoardingAutoSyncPage;
+import com.yahoo.flickr.qa.pages.AutoSyncBannerPage;
 import com.yahoo.flickr.qa.pages.WelcomePage;
 import com.yahoo.flickr.qa.utils.AbstractDriver;
-import cucumber.api.PendingException;
+import cucumber.api.java.Before;
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.ios.IOSDriver;
-import org.openqa.selenium.By;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by srikanthv on 2/4/15.
  */
-public class IOSSmokeStepDefs {
+public class IOSNativeStepDefs {
 
     private static AppiumDriver driver;
     private WelcomePage welcomePage;
     private LoginPage loginPage;
-    private OnBoardingAutoSyncPage onBoardingAutoSyncPage;
+    private AutoSyncBannerPage autoSyncBannerPage;
 
+    @Before("@CreateEnvironment")
+    public void createEnvironment(){
+        driver=AbstractDriver.getDriver();
+    }
 
-    @Given("^I have the Flickr app installed on my device$")
-    public void i_have_the_Flickr_app_installed_on_my_device(){
-        driver= AbstractDriver.getDriver();
-        welcomePage=new WelcomePage(driver);
+    @After("@TearEnvironment")
+    public void tearEnvironment(){
+        driver.quit();
+    }
+
+    @Given("^I am on \"(.*?)\" page$")
+    public void i_am_on_page(String page){
+        if(page.equals("Welcome")){
+            welcomePage=new WelcomePage(driver);
+        }
     }
 
     @And("^I click on \"(.*?)\" button$")
@@ -37,14 +44,16 @@ public class IOSSmokeStepDefs {
         if(arg1.equals("Get Started")){
             loginPage=welcomePage.clickGetStartedBtn();
         }else if(arg1.equals("Sign In")){
-            onBoardingAutoSyncPage=loginPage.clickSignInBtn();
+            autoSyncBannerPage =loginPage.clickSignInBtn();
         }
 
     }
 
-    @Then("^I should be navigated to Login screen$")
-    public void i_should_be_navigated_to_Login_screen(){
-        System.out.println("Login page is shown");
+    @Then("^I should be navigated to \"(.*?)\" screen$")
+    public void i_should_be_navigated_to_screen(String page){
+        if(page.equals("Login")){
+            loginPage.verifyPage();
+        }
     }
 
     @When("^I enter valid \"(.*?)\" and \"(.*?)\"$")
@@ -55,12 +64,11 @@ public class IOSSmokeStepDefs {
 
     @Then("^I should be logged in successfully$")
     public void i_should_be_logged_in_successfully() throws Exception{
-        System.out.println("Login Successful");
-        Thread.sleep(5000);
-        onBoardingAutoSyncPage.clickSkipIWillDecideLater();
-        Thread.sleep(10000);
+        autoSyncBannerPage.clickSkipIWillDecideLater();
         driver.quit();
     }
+
+
 
 
 }

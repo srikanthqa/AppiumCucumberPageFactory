@@ -11,6 +11,5 @@ public class FindFriendsPage extends AbstractPage{
 
     public FindFriendsPage(AppiumDriver driver) {
         super(driver);
-        initPage();
     }
 }

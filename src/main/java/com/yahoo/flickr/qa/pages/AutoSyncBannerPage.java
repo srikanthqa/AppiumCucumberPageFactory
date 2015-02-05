@@ -8,17 +8,17 @@ import org.openqa.selenium.WebElement;
 /**
  * Created by srikanthv on 2/4/15.
  */
-public class OnBoardingAutoSyncPage extends AbstractPage{
+public class AutoSyncBannerPage extends AbstractPage{
 
-    public OnBoardingAutoSyncPage(AppiumDriver driver) {
+    public AutoSyncBannerPage(AppiumDriver driver) {
         super(driver);
-        initPage();
     }
 
     @iOSFindBy(uiAutomator = ".buttons()[\"Skip, I'll decide later\"]")
     private WebElement linkSkipIWillDecideLater;
 
     public void clickSkipIWillDecideLater(){
+        driverWait(linkSkipIWillDecideLater,10);
         linkSkipIWillDecideLater.click();
     }
 
