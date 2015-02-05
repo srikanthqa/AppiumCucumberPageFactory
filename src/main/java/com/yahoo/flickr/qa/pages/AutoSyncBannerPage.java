@@ -17,9 +17,15 @@ public class AutoSyncBannerPage extends AbstractPage{
     @iOSFindBy(uiAutomator = ".buttons()[\"Skip, I'll decide later\"]")
     private WebElement linkSkipIWillDecideLater;
 
-    public void clickSkipIWillDecideLater(){
+    public LandingPage clickSkipIWillDecideLater(){
         driverWait(linkSkipIWillDecideLater,10);
         linkSkipIWillDecideLater.click();
+        return new LandingPage(driver);
+    }
+
+    public boolean verifyPage(){
+        driverWait(linkSkipIWillDecideLater,10);
+        return linkSkipIWillDecideLater.isDisplayed();
     }
 
 }

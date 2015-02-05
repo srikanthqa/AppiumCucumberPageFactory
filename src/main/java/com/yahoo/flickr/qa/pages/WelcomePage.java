@@ -21,4 +21,8 @@ public class WelcomePage extends AbstractPage{
         btnGetStarted.click();
         return new LoginPage(driver);
     }
+
+    public boolean verifyPage(){
+        return btnGetStarted.isDisplayed();
+    }
 }
