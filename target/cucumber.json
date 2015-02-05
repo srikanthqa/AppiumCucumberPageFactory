@@ -1,0 +1,124 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "TC01- Login with valid credentials",
+        "description": "",
+        "id": "smoke-testing-on-the-ios-flickr-native-app;tc01--login-with-valid-credentials",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11024178781,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I have the Flickr app installed on my device",
+            "match": {
+              "location": "IOSSmokeStepDefs.i_have_the_Flickr_app_installed_on_my_device()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2286723453,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I click on \"Get Started\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Get Started",
+                  "offset": 12
+                }
+              ],
+              "location": "IOSSmokeStepDefs.i_click_on_button(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 169023,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I should be navigated to Login screen",
+            "match": {
+              "location": "IOSSmokeStepDefs.i_should_be_navigated_to_Login_screen()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14209222638,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I enter valid \"username\" and \"password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "username",
+                  "offset": 15
+                },
+                {
+                  "val": "password",
+                  "offset": 30
+                }
+              ],
+              "location": "IOSSmokeStepDefs.i_enter_valid_and(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2329666020,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I click on \"Sign In\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Sign In",
+                  "offset": 12
+                }
+              ],
+              "location": "IOSSmokeStepDefs.i_click_on_button(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17687751293,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "IOSSmokeStepDefs.i_should_be_logged_in_successfully()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 11,
+        "name": "TC02- Logout from the current session",
+        "description": "",
+        "id": "smoke-testing-on-the-ios-flickr-native-app;tc02--logout-from-the-current-session",
+        "type": "scenario",
+        "keyword": "Scenario"
+      }
+    ],
+    "name": "Smoke Testing on the IOS Flickr Native App",
+    "description": "",
+    "id": "smoke-testing-on-the-ios-flickr-native-app",
+    "keyword": "Feature",
+    "uri": "iossmoke.feature"
+  }
+]
